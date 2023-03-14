@@ -62,10 +62,10 @@ diagnosticMode:
 auth:
   ## @param auth.username Username to access web UI
   ##
-  username: user
+  username: admin
   ## @param auth.password Password to access web UI
   ##
-  password: ""
+  password: "admin"
   ## @param auth.fernetKey Fernet key to secure connections
   ## ref: https://airflow.readthedocs.io/en/stable/howto/secure-connections.html
   ## ref: https://bcb.github.io/airflow/fernet-key
@@ -940,7 +940,7 @@ git:
   ## @param git.dags.repositories [array] Array of repositories from which to download DAG files
   ##
   dags:
-    enabled: false
+    enabled: true
     ## Name for repositories can be anything unique and must follow same naming conventions as kubernetes.
     ## Kubernetes resources can have names up to 253 characters long. The characters allowed in names are:
     ## digits (0-9), lower case letters (a-z), -, and .
@@ -951,13 +951,13 @@ git:
     ##     path: /
     ##
     repositories:
-      - repository: ""
+      - repository: "https://github.com/mateustanaka/airflow.git"
         ## Branch from repository to checkout
         ##
-        branch: ""
+        branch: "master"
         ## An unique identifier for repository, must be unique for each repository
         ##
-        name: ""
+        name: "my-dags"
         ## Path to a folder in the repository containing the dags
         ##
         path: ""
